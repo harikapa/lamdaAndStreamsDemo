@@ -115,5 +115,22 @@ public class StreamOperationsDemoTest {
         assertEquals("Amitabh", streamOperationsDemo.getFirstNameStartsWithletter(memberNames,"A"));
     }
 
+    @Test
+    public void givenListShouldReturnEvenNumbersList()
+    {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(213232132);
+        list.add(5656567);
 
+        List<Integer> resultList = new ArrayList<>();
+        resultList.add(2);
+        resultList.add(4);
+        resultList.add(213232132);
+
+        assertEquals(resultList,streamOperationsDemo.filterEvenNumbers(list));
+    }
 }

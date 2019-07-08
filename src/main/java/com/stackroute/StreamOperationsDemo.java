@@ -48,8 +48,7 @@ public class StreamOperationsDemo {
         try {
             String name = null;
             if (inputList != null) {
-                inputList = inputList.stream().filter(x -> x.startsWith(letter)).collect(Collectors.toList());
-                name = inputList.get(0);
+                name = inputList.stream().filter(x -> x.startsWith(letter)).findFirst().get();
             }
             return name;
 
@@ -57,6 +56,13 @@ public class StreamOperationsDemo {
         {
             return null;
         }
+    }
+
+    public List<Integer> filterEvenNumbers(List<Integer> list) {
+        if (list != null) {
+            list = list.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
+        }
+        return list;
     }
 
 }
